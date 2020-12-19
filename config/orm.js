@@ -12,4 +12,4 @@ function updateOne(){
 
 };
 
-modole.exports = orm; 
+module.exports = orm; 
