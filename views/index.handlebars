@@ -7,14 +7,42 @@
 <!-- Pass in data from server.js -->
 <ul>
     {{#each burgers}}
+    {{#unless devoured}}
+    {{> burgers/burger devoured=true}}
     <li>
         <p><span class="label">ID:</span> {{this.id}}</p>
         <p><span class="label">burger:</span> {{this.burger_name}}</p>
-
-        <button data-id="{{this.id}}" class="delburger">Delete</button>
-
-        <a href="/{{this.id}}">Update burger</a>
     </li>
+    {{/unless}}
     {{/each}}
 </ul>
-<button class="btn" type="submit"></button>
+
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger devoured=false}}
+    <li>
+        <p><span class="label">ID:</span> {{this.id}}</p>
+        <p><span class="label">burger:</span> {{this.burger_name}}</p>
+    </li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+<h2>Add a burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger name:</label>
+        <input type="text" id="burger" name="burger">
+    </div>
+
+    <div class="form-group">
+        <label for="devoured">Sleepy?</label><br>
+        <input type="radio" name="devoured" value="1" checked>Devoured!<br>
+        <input type="radio" name="devoured" value="0"> Not Devoured
+    </div>
+
+    <button type="submit">Add burger</button>
+</form>
