@@ -14,7 +14,7 @@ var burgers = {
   },
 
   updateOne: function (objVolVals, condition, cb) {
-    orm.insertOne("burger", objVolVals, condition, function (res) {
+    orm.updateOne("burgers", objVolVals, condition, function (res) {
       cb(res);
     });
   },
