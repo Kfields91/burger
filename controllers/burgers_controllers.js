@@ -1,15 +1,16 @@
 const express = require("express");
-const burgers = require("../models/burger");
 
 var router = express.Router();
+
+const burgers = require("../models/burger");
 
 router.get("/", function (req, res) {
   burgers.selectAll(function (data) {
     var burgerObject = {
       burgers: data,
     };
-    res.render("index", burgerObject);
     console.log(burgerObject);
+    res.render("index", burgerObject);
   });
 });
 
@@ -27,8 +28,8 @@ router.post("/api/burgers", function (req, res) {
   // res.render("index", burgerAdded);
 });
 
-router.put("/api/burger/:id", function (req, res) {
-  const burgerId = "id = " + res.params.id;
+router.put("/api/burgers/:id", function (req, res) {
+  let burgerId = "id = " + req.params.id;
 
   console.log("id", burgerId);
 
@@ -38,11 +39,25 @@ router.put("/api/burger/:id", function (req, res) {
     },
     burgerId,
     function (result) {
-      if (result.changedRows === 0) {
+      if (result.changedRows == 0) {
         return res.status(404).end();
+      } else {
+        res.status(200).end();
       }
     }
   );
+});
+
+router.delete("/api/burgers/:id", function (req, res) {
+  let burgerId = "id = " + req.params.id;
+
+  burgers.delete(burgerId, function (result) {
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
 });
 
 module.exports = router;
