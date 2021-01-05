@@ -2,29 +2,31 @@
 
 <h1>Eat-the-Burger</h1>
 
-<p>Manage your burgers</p>
+<h2>Burger's Not Eaten</h2>>
 
 <!-- Pass in data from server.js -->
 <ul>
     {{#each burgers}}
     {{#unless devoured}}
-    {{> burgers/burger devoured=true}}
-    <li>
+    {{> burgers/burger eaten=true}}
+    {{!-- <li>
         <p><span class="label">ID:</span> {{this.id}}</p>
         <p><span class="label">burger:</span> {{this.burger_name}}</p>
-    </li>
+    </li> --}}
     {{/unless}}
     {{/each}}
 </ul>
 
+<h2> Burger's Eaten </h2>
+
 <ul>
     {{#each burgers}}
     {{#if devoured}}
-    {{> burgers/burger devoured=false}}
-    <li>
+    {{> burgers/burger eaten=false}}
+    {{!-- <li>
         <p><span class="label">ID:</span> {{this.id}}</p>
         <p><span class="label">burger:</span> {{this.burger_name}}</p>
-    </li>
+    </li> --}}
     {{/if}}
     {{/each}}
 </ul>
@@ -34,13 +36,13 @@
 <form class="create-form">
 
     <div class="form-group">
-        <label for="burger">Burger name:</label>
-        <input type="text" id="burger" name="burger">
+        <label for="bu">Burger name:</label>
+        <input type="text" id="bu" name="name">
     </div>
 
     <div class="form-group">
-        <label for="devoured">Sleepy?</label><br>
-        <input type="radio" name="devoured" value="1" checked>Devoured!<br>
+        <label for="devoured">Eaten?</label><br>
+        <input type="radio" name="devoured" value="1" checked> Devoured!<br>
         <input type="radio" name="devoured" value="0"> Not Devoured
     </div>
 
