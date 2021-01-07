@@ -13,11 +13,11 @@ var burgers = {
     });
   },
 
-  updateOne: function (objVolVals, condition, cb) {
-    orm.updateOne("burgers", objVolVals, condition, function (res) {
-      cb(res);
-    });
+  updateOne: function (id, cb) {
+    var condition = "id =" + id;
+    orm.updateOne("burgers", { devoured: true }, condition, cb);
   },
+
   delete: function (condition, cb) {
     orm.delete("burgers", condition, function (res) {
       cb(res);

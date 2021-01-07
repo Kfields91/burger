@@ -1,5 +1,5 @@
 $(function () {
-  $("#changed-state").on("click", function (event) {
+  $("#change-state").on("click", function (event) {
     console.log("click", event);
     var id = $(this).data("id");
     var newState = $(this).data("notEaten");
