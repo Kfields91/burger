@@ -1,0 +1,56 @@
+body,
+html {
+  height: 100%;
+  background: rgb(255, 209, 3);
+}
+h1 {
+  text-align: center;
+}
+
+div.left {
+  background: tomato;
+  width: 45%;
+  float: left;
+  padding: 10px;
+  height: auto;
+  margin: 10px;
+}
+
+div.right {
+  background: rgb(102, 172, 102);
+  width: 45%;
+  float: left;
+  padding: 10px;
+  height: auto;
+  margin: 10px;
+}
+
+div.bottom {
+  /* background: tomato; */
+  clear: left;
+  padding: 10px;
+  /* padding-left: 600px;
+  padding-right: 600px; */
+}
+
+li {
+  padding: 3px;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
+label {
+  font-size: large;
+}
+
+button.submit {
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  background-color: white;
+}
