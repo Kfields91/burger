@@ -14,6 +14,8 @@
 
 ### Description
 
+![eat-the-burger2](https://user-images.githubusercontent.com/68616301/104147778-91b0be80-5384-11eb-99bd-be5defdd5dfb.gif)
+
 Eat-the-Burger is a burger logging app that utilizes Jquery, MySql, &Express. Eat-the-Burger tracks users burger consumption. The user can log which burgers they have devoured from the menu, add burgers to the menu, and delete burgers from the menu. The user's also have an option to delete burger's from their devoured tracker.
 
 <b>This app is deployed through Herkoku using JawsDB</b>
@@ -56,4 +58,5 @@ If you would like to contribute to this project reach out. Contact Information c
 ### Contact-Information
 
 [Github Profile](https://github.com/https://github.com/Kfields91)
+<br>
 [Github Repo](https://github.com/Kfields91/burger)
